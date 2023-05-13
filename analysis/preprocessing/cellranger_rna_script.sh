@@ -10,5 +10,5 @@ for i in {1..8}
 do
         id=S$i
 
-        $cellranger_rna count --id=$id --transcriptome=$ref --fastqs=$fastq_path$id --sample=$id --localcores=$vores --localmem=$mem --disable-ui
+        $cellranger_rna count --id=$id --transcriptome=$ref --fastqs=$fastq_path$id --sample=$id --localcores=$cores --localmem=$mem --disable-ui
 done
