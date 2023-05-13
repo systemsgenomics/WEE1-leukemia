@@ -1,0 +1,107 @@
+## You have opened the template file, please save a copy of this and only edit your copied version!
+## RECOMMENDED NAMING CONVENTION: 
+## gro_userName_project_batch
+
+## edit the respective /trimconfigs/*trimconfig.txt file to set trimming and file inclusion options before running
+## by default, no trimming and all files of the same sample will be combined
+
+## SETTINGS
+
+## Do not leave any extra spaces in the text you type below!
+
+
+## path to pipeline folder
+## "path/to/folder/"
+
+PIPE="ngs_pipelines/"
+
+## is this re-analysis of public data (already in GEO)
+## if new data set NO and files for IDA transfer will be kept under prepres/toIDA
+## "TRUE/FALSE"
+PUBLIC="FALSE"
+
+## name of the person who is processing the files (responsible for IDA transfer checks)
+USER="testuser"
+
+## folder name to be used during pipeline run (exactly as in pdata.txt!)
+FOLDER="testFolder"
+
+## which steps to perform, one of 
+## "1" perform filtering of reads and repeat QC
+## "2" align reads
+## "3" create homer tag dies
+## "1"/"2"/"3"
+
+STEP="1"
+
+
+## do just one step? if set to false will start from this step and then do all the rest
+## "TRUE" / "FALSE"
+JUSTONE="FALSE"
+
+
+
+
+
+## quality filter settings:
+
+## for correct QC reporting, need to know the quality offset
+## typical for older illumina files 66
+## for new illumina use 33
+## "33"/"66"
+
+OFFSET="33"
+
+## minimum percentage of bp above cutoff
+## integer
+
+QP="97"
+
+## quality cutoff
+QMIN="10"
+
+
+## alignment settings:
+## set the reference genome to use in mapping reads, e.g. UCSC and hg19
+
+GVER="UCSC"
+
+REF="hg19"
+
+## set alignment parameters for bowtie
+## -v <int> Report alignments with at most <int> mismatches
+## -k <int> Report up to <int> valid alignments per read or pair
+## -m <int> Suppress all alignments for a particular read or pair if more than <int> reportable alignments exist for it. 
+
+BOWTIEv=2
+
+BOWTIEm=3
+
+BOWTIEk=1
+
+
+## estimated fragment length (for Homer tagdirectories)
+FLENGTH=75
+
+
+## how many reads in the same location defines a stack (-pc parameter in Homer)
+PC=3
+
+## URL for hub
+URL="http://bioinformatics.uef.fi/biowhat/hubs/hg19/groseq/"
+
+
+
+## how many processors will be activated for steps that can be run in parallel
+PARALLEL=15
+
+## clean-up intermediate files 
+## "TRUE" / "FALSE"
+CLEAN="FALSE"
+
+## The cleanup will do the following
+## 1. Once the quality filtered files exist, delete folder from prepres
+## 2. Once the aligned files exist, delete folder from intermed_res
+## 3. Once the tagdirs exist, delete folder from aligned
+## notice that if PUBLIC is set to TRUE then IDA folder under prepares will still keep the bam files
+## also the tagdirs will be copied to the IDA folder for immediate backup
