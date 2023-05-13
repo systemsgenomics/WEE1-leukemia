@@ -1,0 +1,92 @@
+### This template file is suitable when polyA adapter trimming is needed
+## e.g. often used for groseq 
+## 
+
+## RECOMMENDED NAMING CONVENTION:
+## prep_userName_project_batch
+
+
+## DESCRIPTION
+## Samples processed together are assumed to be part of the same sample set
+## (If not, then make as many folders as you have sample sets and run this separately for each)
+## Files copied under pipeline folder structure and renamed
+## Optional: backup immediately to IDA
+## Optional: Adapter / polyA trimming (homerTools)
+## Quality control (FastQC)
+
+## Required files:
+## The runconfig is used together with a pdata file that gives further sample details
+## The runconfig defines settings for running the same commands for the sample batch 
+
+
+## The folder including files to process is specified by the FILES path
+
+## Does your data need splitting by barcodes? (old custom 2 libraries with 2 nt barcode at read start)
+## This option is no longer supported. Easiest is to run this manually and then start prep after barcode splitting
+
+
+## SETTINGS
+## Do not leave any extra spaces in the text you type below!
+
+## is this re-analysis of public data (already in GEO)
+## if new data set NO and files for IDA transfer will be kept under prepres/toIDA
+## "TRUE/FALSE"
+PUBLIC="FALSE"
+
+## Do IDA transfer?
+IDA_TRANSFER="FALSE"
+
+## IDA transfer path
+IDA_PATH="RAW/GRO/testProject/"
+
+
+## name of the person who is processing the files (responsible for IDA transfer checks)
+USER="testUser"
+
+## folder name to be used during pipeline run (exactly as in pdata.txt!)
+FOLDER="testFolder"
+
+## where are raw .sra/fastq files and the pdata.txt file? (if none, use the same path as fastq below)
+## "path/to/files/"
+FILES="raw_data/testUser/testFolder/"
+
+
+## pipeline scripts path
+## "path/to/pipeline/folder/"
+PIPE="sysgen/ngs_pipelines/"
+
+
+## indicate file type [sra/fastq] (the pipeline can start from sra format or fastq format)
+## usually now all data is retrieved using fastqdump directly so this would be fastq
+## "fastq"/"sra"
+
+TYPE="fastq"
+
+## if starting from sra files need to know quality score offset, by default dumps usually with wrong offset
+## typical for older illumina files was 66
+## for new illumina use 33 (also fastqdump seems to return them in this quality scoring now
+## "33"/"66"
+
+OFFSET="33"
+
+
+## is this a single- or a paired-end sequencing sample? 
+## "single" / "paired"
+SEQWAY="single"
+
+
+## are there any extra sequences (adapter, polyA) in your files that would need to be trimmed?
+## "TRUE"/"FALSE"
+TRIM="TRUE"
+
+## modify settings below only if you set trim TRUE
+## is your library prepared by polyA tailing? if yes you probably want to trim those away 
+## set the length of polyA to be matched here (typically 15 As)
+## alternatively you can specify here the adapter sequence (e.g. AGATCGGAAGAGCACACGTCTGAACTCCAGTCA)
+## use NA if you just want to length trim
+## "NA / AAAAAAAAAAAAAAA"
+TRIMA="AAAAAAAAAAAAAAA"
+
+## how long reads to keep? anything shorter will be cut away!! (this is relevant if barcodes are trimmed or polyAs)
+## "integerValue"
+TRIMLENGTH="25"
