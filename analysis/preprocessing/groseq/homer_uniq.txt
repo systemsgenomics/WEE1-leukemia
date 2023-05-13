@@ -1,0 +1,7 @@
+## unique mapppability files can be obtained from Homer server
+
+## e.g.
+
+#wget http://homer.ucsd.edu/homer/data/uniqmap/uniqmap.hg19.50nt.zip
+
+#unzip uniqmap.hg19.50nt.zip
