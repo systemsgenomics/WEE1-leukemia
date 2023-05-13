@@ -20,7 +20,7 @@ human cell line data, 24 h
 - SEURAT_singleCell_RNAseq_RS411_24h.R
 - scRNAseq_RS411_clusterDE_heatmap.R
 - scRNA_RS411_24h_viz_data.R
-- RS411_velocity_analysis-dynamic.py
+- RS411_run_velocyto_score_genesets.py
 
 - SEURAT_singleCell_RNAseq_Nalm6_24h.R
 - integration_with_scRNAseq_24h_RS411_Nalm6.R
