@@ -1,0 +1,19 @@
+#fill all columns. Do not use _ in any text you type. Separate by dot if needed (i.e. with . ). Write na if the information is not relevant												
+# columns 3-13 are used in file naming, avoid too long names
+# if your original file names have special characters, safest is to rename files												
+#file1	1	file name to be processed (without .gz ending)										
+#file2	2	NA if not paired-end data, else file2 name as above for file1										
+#project	3	Main project, IDA folder name for long-term storage										
+#assay	4	GRO/RNA/smallRNA/RIBO/CHIP/HIC										
+#gseid	5	GSE id or experiment date and pool info										
+#gsmid	6	GSM id or sample code+index information; set identical for runs that should be combined										
+#celltype	7	cell type or tissue from which sample was isolated										
+#sampleType	8	treatment of cells/tissue and antibody information for ChIP										
+#time	9	time point after treatment (if relevant)										
+#replicate	10	biological replicate										
+#genome_from	11	typically UCSC genome used										
+#version	12	genome version, e.g. hg19. This also tells whether this is human/mouse/other data										
+#folder	13	folder name to be used during pipeline run, must be unique and sth you never used before (will overwrite!)										
+#barcode	14	optional column, needed if you have special custom barcodes (not illumina indexing)
+file1	file2	project	assay	gseid	gsmid	celltype	sampleType	time	replicate	genome_from	version	folder
+gro-s1.fastq	NA	test	GRO	testgro	s1	na	na	na	1	UCSC	hg19	testFolder
