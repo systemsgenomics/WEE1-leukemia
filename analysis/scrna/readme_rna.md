@@ -17,22 +17,22 @@ cellranger_rna_script.sh
 ### Downstream analysis
 
 human cell line data, 24 h
-- SEURAT_singleCell_RNAseq_RS411_24h.R
-- scRNAseq_RS411_clusterDE_heatmap.R
-- scRNA_RS411_24h_viz_data.R
-- RS411_run_velocyto_score_genesets.py
+- SEURAT_singleCell_RNAseq_RS411_24h.R (QC, filtering, normalization; produces clustering used for rna-seq cell state assignment)
+- scRNAseq_RS411_clusterDE_heatmap.R (marker genes for cell states)
+- RS411_run_velocyto_score_genesets.py (produces UMAPs separated by treatment shown in figs)
 
-- SEURAT_singleCell_RNAseq_Nalm6_24h.R
-- integration_with_scRNAseq_24h_RS411_Nalm6.R
+- SEURAT_singleCell_RNAseq_Nalm6_24h.R (QC, filtering, normalization)
+- integration_with_scRNAseq_24h_RS411_Nalm6.R (label transfer)
+- Nalm6_run_velocyto_score_genesets.py (produces UMAPs separated by treatment shown in figs)
 
 human cell line data, 10 h
-- integration_with_scRNAseq_RS411.24h_RS411.10h_DMSOcellsonly.R
-- integration_with_scRNAseq_RS411.24h_RS411.10h_Wee1icellsonly.R
+- integration_with_scRNAseq_RS411.24h_RS411.10h_DMSOcellsonly.R (label transfer)
+- integration_with_scRNAseq_RS411.24h_RS411.10h_Wee1icellsonly.R (label transfer)
 
 human primary cell data
-- SEURAT_singleCell_RNAseq_MLL7treated.R
-- viz_mouse_sc_data_MLL7.R
+- SEURAT_singleCell_RNAseq_MLL7treated.R (QC, filtering, normalization)
+- viz_mouse_sc_data_MLL7.R (marker gene plots)
 
-- SEURAT_singleCell_RNAseq_MEF2D.R
-- viz_10X_data_MEF2D.R
+- SEURAT_singleCell_RNAseq_MEF2D.R (QC, filtering, normalization)
+- viz_10X_data_MEF2D.R (marker gene plots)
 
