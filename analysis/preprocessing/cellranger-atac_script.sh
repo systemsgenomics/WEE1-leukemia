@@ -10,5 +10,5 @@ for i in {1..8}
 do
         id=T$i
 
-        $cellranger_atac count --id=$id --reference=$ref --fastqs=$fastq_path$id --sample=$id --localcores=$vores --localmem=$mem --disable-ui
+        $cellranger_atac count --id=$id --reference=$ref --fastqs=$fastq_path$id --sample=$id --localcores=$cores --localmem=$mem --disable-ui
 done
