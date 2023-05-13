@@ -34,5 +34,5 @@ human primary cell data
 - viz_mouse_sc_data_MLL7.R
 
 - SEURAT_singleCell_RNAseq_MEF2D.R
-- viz_10X_data_patients.R
+- viz_10X_data_MEF2D.R
 
